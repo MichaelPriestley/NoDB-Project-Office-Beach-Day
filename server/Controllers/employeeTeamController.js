@@ -46,8 +46,8 @@ saveNameVoldemort: (req, res) => {
     const {id} = req.params
     const {name} = req.body
 
-    const {index} = teamVoldemort.findIndex(employee => {
-        return element.id === id
+    const index = teamVoldemort.findIndex(employee => {
+        return employee.id === +id
     })
 
     teamVoldemort[index].name = name
@@ -59,7 +59,7 @@ saveNameGryffindor: (req, res) => {
     const {name} = req.body
 
     const index = teamGryffindor.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
     teamGryffindor[index].name = name
@@ -71,7 +71,7 @@ saveNameUSA: (req, res) => {
     const {name} = req.body
 
     const index = teamUSA.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
     teamUSA[index].name = name
@@ -83,7 +83,7 @@ saveNameBlue: (req, res) => {
     const {name} = req.body
 
     const index = theBlueTeam.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
     theBlueTeam[index].name = name
@@ -94,10 +94,10 @@ fireEmployeeVoldemort: (req, res) => {
     const {id} = req.params
 
     const index = teamVoldemort.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
-    teamVoldemort[index].splice(index, 1)
+    teamVoldemort.splice(index, 1)
     res.status(200).send(teamVoldemort)
 },
 
@@ -105,10 +105,10 @@ fireEmployeeGryffindor: (req, res) => {
     const {id} = req.params
 
     const index = teamGryffindor.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
-    teamGryffindor[index].splice(index, 1)
+    teamGryffindor.splice(index, 1)
     res.status(200).send(teamGryffindor)
 },
 
@@ -116,10 +116,10 @@ fireEmployeeUSA: (req, res) => {
     const {id} = req.params
 
     const index = teamUSA.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
-    teamUSA[index].splice(index, 1)
+    teamUSA.splice(index, 1)
     res.status(200).send(teamUSA)
 },
 
@@ -127,10 +127,10 @@ fireEmployeeBlue: (req, res) => {
     const {id} = req.params
 
     const index = theBlueTeam.findIndex(employee => {
-        return employee.id === id
+        return employee.id === +id
     })
 
-    theBlueTeam[index].splice(index, 1)
+    theBlueTeam.splice(index, 1)
     res.status(200).send(theBlueTeam)
 }
 
