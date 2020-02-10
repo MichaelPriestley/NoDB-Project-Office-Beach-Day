@@ -9,6 +9,7 @@ function ButtonControl(props) {
                     <button onClick={() => props.moveToTheBlueTeam(props.employee)}>Blue Team</button>
                 </div>
     )
+        
 }
 
 export default ButtonControl

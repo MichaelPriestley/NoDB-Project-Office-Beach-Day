@@ -20,7 +20,7 @@ class App extends Component {
 
 
   moveToTeamVoldemort = employee => {
-    axios.post(`/api/employees`, {employee}).then(response => {
+    axios.post(`/api/employeesV`, {employee}).then(response => {
       this.setState({
         teamVoldemort: response.data
       })
@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   moveToTeamGryffindor = employee => {
-    axios.post(`/api/employees`, {employee}).then(response => {
+    axios.post(`/api/employeesG`, {employee}).then(response => {
       this.setState({
         teamGryffindor: response.data
       })
@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   moveToTeamUSA = employee => {
-    axios.post(`/api/employees`, {employee}).then(response => {
+    axios.post(`/api/employeesU`, {employee}).then(response => {
       this.setState({
         teamUSA: response.data
       })
@@ -44,7 +44,7 @@ class App extends Component {
 }
 
   moveToTheBlueTeam = employee => {
-    axios.post(`/api/employees`, {employee}).then(response => {
+    axios.post(`/api/employeesB`, {employee}).then(response => {
       this.setState({
         theBlueTeam: response.data
       })
