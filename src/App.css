@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+.header {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(76,193,245); */
+  color: white;
+  font-family: VTBulletin;
+  font-size: larger;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.employee-display {
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 99vw;
+  height: 44vh;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.employee-box {
+  width: 6%;
+  height: 25%;
+  /* padding: 10px; */
+ 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box-interior {
+  display: flex;
+  /* justify-content: center; */
+  color: rgb(255, 255, 255);
+  
+}
+
+.employee-image {
+  height: 15vh;
+  width: 100%;
+  border-radius: 25%;
+  border-style: solid;
+  border-width: 2px;
+
+ 
+}
+
+.teams {
+  font-family: VTBulletin;
+  border-bottom: black;
+
+}
+
+.team-name {
+  border-bottom-style: solid black;
+  border-bottom: solid;
+  font-size: 1.8rem;
+}
+
+
+.buttons {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
+  
+}
+
+.buttons > button {
+  
+  height: 100%;
+  width: 100%;
+  font-family: VTBulletin;
+  font-size: .5rem;
+  font-weight: 800;
+}
+
+.box-interior > h2 {
+  font-family: VTBulletin;
+  padding-left: 5px;
+  /* border-radius: 25%;
+  border-style: solid; */
+  /* background-color: rgb(57, 56, 70); */
+
+}
+
+.background {
+  background-image: url(https://wallpaperaccess.com/full/1146179.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.teams {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.team.view {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 15vw;
+}
+
+.jim {
+  height: 15%;
+  width: 100%;
+  background-image: url(https://vignette.wikia.nocookie.net/theoffice/images/9/9a/Jim.jpg/revision/latest?cb=20170701084550);
+  background-size: cover;
+  background-position: 25% 10%;
+  border-radius: 30%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-style: solid;
+  border-width: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.dwight {
+  height: 15%;
+  width: 100%;
+  background-image: url(https://vignette.wikia.nocookie.net/theoffice/images/c/c5/Dwight_.jpg/revision/latest?cb=20170701082424);
+  background-size: cover;
+  background-position: 25% 10%;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.andy {
+  height: 15%;
+  width: 100%;
+  background-image: url(https://vignette.wikia.nocookie.net/theoffice/images/2/20/C0164512-C4C2-485C-9CB6-85B31F642090.jpeg/revision/latest?cb=20200103213101);
+  background-size: cover;
+  background-position: 25% 20%;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.stanley {
+  height: 15%;
+  width: 100%;
+  background-image: url(https://vignette.wikia.nocookie.net/theoffice/images/2/23/Stanley_Hudson.jpg/revision/latest?cb=20170701085445);
+  background-size: cover;
+  background-position: 25% 20%;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px;
 }

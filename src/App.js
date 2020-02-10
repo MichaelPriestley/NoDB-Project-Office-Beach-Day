@@ -3,7 +3,6 @@ import './App.css';
 import Finder from './Components/Finder'
 import Header from './Components/Header'
 import Team from './Components/Team'
-import Employees from './Components/Employees'
 import axios from 'axios'
 
 class App extends Component {
@@ -14,10 +13,11 @@ class App extends Component {
       teamVoldemort: [],
       teamGryffindor: [],
       teamUSA: [],
-      theBlueTeam: []
+      theBlueTeam: [],
     }
 
   }
+
 
   moveToTeamVoldemort = employee => {
     axios.post(`/api/employees`, {employee}).then(response => {
@@ -51,7 +51,7 @@ class App extends Component {
     })
   }
 
-  saveNameVoldemort(id, newName) {
+  saveNameVoldemort = (id, newName) => {
     axios.put(`/api/employees/${id}`, {name: newName}).then(response => {
       this.setState({
         teamVoldemort: response.data
@@ -59,7 +59,7 @@ class App extends Component {
     })
   }
 
-  saveNameGryffindor(id, newName) {
+  saveNameGryffindor = (id, newName) => {
     axios.put(`/api/employees/${id}`, {name: newName}).then(response => {
       this.setState({
         teamGryffindor: response.data
@@ -67,7 +67,7 @@ class App extends Component {
     })
   }
 
-  saveNameUSA(id, newName) {
+  saveNameUSA = (id, newName) => {
     axios.put(`/api/employees/${id}`, {name: newName}).then(response => {
       this.setState({
         teamUSA: response.data
@@ -75,7 +75,7 @@ class App extends Component {
     })
   }
 
-  saveNameBlue(id, newName) {
+  saveNameBlue = (id, newName) => {
     axios.put(`/api/employees/${id}`, {name: newName}).then(response => {
       this.setState({
         theBlueTeam: response.data
@@ -83,30 +83,62 @@ class App extends Component {
     })
   }
 
-  fireEmployeeVoldemort(id) {
-
+  fireEmployeeVoldemort = id => {
+    axios.delete(`/api/employees/${id}`).then(response => {
+      this.setState({
+        teamVoldemort: response.data
+      })
+    })
   }
 
-  fireEmployeeGryffindor(id) {
-
+  fireEmployeeGryffindor = id => {
+    axios.delete(`/api/employees/${id}`).then(response => {
+      this.setState({
+        teamGryffindor: response.data
+      })
+    })
   }
 
-  fireEmployeeUSA(id) {
-
+  fireEmployeeUSA = id => {
+    axios.delete(`/api/employees/${id}`).then(response => {
+      this.setState({
+        teamUSA: response.data
+      })
+    })
   }
 
-  fireEmployeeBlue(id) {
-    
+  fireEmployeeBlue = id => {
+    axios.delete(`/api/employees/${id}`).then(response => {
+      this.setState({
+        theBlueTeam: response.data
+      })
+    })
   }
 
   render() {
     return (
-      <div>
+      <div className="background">
         <Header /> 
-        <Finder />
-        <Employees />
-        App.js
-        <Team />
+        <Finder 
+          moveToTeamVoldemort={this.moveToTeamVoldemort}
+          moveToTeamGryffindor={this.moveToTeamGryffindor}
+          moveToTeamUSA={this.moveToTeamUSA}
+          moveToTheBlueTeam={this.moveToTheBlueTeam}/>
+        
+        <Team
+         saveNameVoldemort={this.saveNameVoldemort}
+          saveNameGryffindor={this.saveNameGryffindor}
+          saveNameUSA={this.saveNameUSA}
+          saveNameBlue={this.saveNameBlue}
+          fireEmployeeVoldemort={this.fireEmployeeVoldemort}
+          fireEmployeeGryffindor={this.fireEmployeeGryffindor}
+          fireEmployeeUSA={this.fireEmployeeUSA}
+          fireEmployeeBlue={this.fireEmployeeBlue}
+          teamVoldemort={this.state.teamVoldemort}
+          teamGryffindor={this.state.teamGryffindor}
+          teamUSA={this.state.teamUSA}
+          theBlueTeam={this.state.theBlueTeam}
+         />
       </div>
     )
   }
